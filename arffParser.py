@@ -1,25 +1,22 @@
 
 fnames = ["./feature01.txt"]
+outf= open('./features.arff', 'w')
 for fname in fnames:
+   outf.write('@RELATION {0}\n'.format(fname))
    with open(fname) as f:
       lines = f.readlines()
    attrNames = lines[0].strip().split(',')
-   print(attrNames)
-   firstLine = lines[1]
-   attrs = line.strip().split(';')
-   size = []
-   for attr in attrs:
-      if attr.startswith('['):
-         nums = attr[1:-1].split(',')
-         size.append(len(nums))
-      else:
-         size.append(1)
-
-   fullAttrNames = 
    for attrName in attrNames:
-      if fullAttrNames 
+      outf.write('@ATTRIBUTE {0} NUMERIC\n'.format(attrName))
 
+   outf.write('@DATA\n')
    for line in lines[1:]:
-      print(line.strip().split(';'))
+      attrs = (line.strip().split(','))
+      if len(attrs) != len(attrName)
+      outf.write(','.join(attrs))
+      outf.write('\n')
+
+outf.close()
+
 
 

@@ -13,16 +13,16 @@ def printDict(dic,idxRange):
       f.write(str(dic.get(i,0)))
    #f.write("]")
    #f.write(";")
-   f.write(",")
+   #f.write(",")
 
 if __name__ == '__main__':
    print("Getting corpus list..." )
    corpusList = getCorpusList()
    print("done." )
 
-   f = open('./feature01.txt', 'w')
-   attrSizes = [1,12,12,8,8]
-   attrNames= ["scoreName", "noteCount", "noteCountFreq", "octave", "octaveFreq"]
+   f = open('./feature01.csv', 'w')
+   attrSizes = [12,12,8,8]
+   attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq"]
    fullAttrNames = []
    for attrSize, attrName in zip(attrSizes, attrNames):
       if attrSize > 1:
@@ -52,12 +52,15 @@ if __name__ == '__main__':
       noteCountFreq = divideByTotal(noteCount, len(notes))
       octaveFreq = divideByTotal(octave, len(notes))
 
-      f.write(str(corpusName))
-      f.write(";")
-      printDict(noteCount, attrSizes[1])
-      printDict(noteCountFreq, attrSizes[2])
-      printDict(octave, attrSizes[3])
-      printDict(octaveFreq, attrSizes[4])
+      #f.write(str(corpusName))
+      #f.write(";")
+      printDict(noteCount, attrSizes[0])
+      f.write(",")
+      printDict(noteCountFreq, attrSizes[1])
+      f.write(",")
+      printDict(octave, attrSizes[2])
+      f.write(",")
+      printDict(octaveFreq, attrSizes[3])
       f.write("\n")
       print("done." )
    f.close()
