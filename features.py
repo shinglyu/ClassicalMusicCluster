@@ -21,8 +21,9 @@ if __name__ == '__main__':
    print("done." )
 
    f = open('./feature01.csv', 'w')
-   attrSizes = [12,12,8,8]
-   attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq"]
+   attrSizes = [12,12,8,8,1]
+# print the name of your features here ===========================================
+   attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq", "composer"]
    fullAttrNames = []
    for attrSize, attrName in zip(attrSizes, attrNames):
       if attrSize > 1:
@@ -37,6 +38,7 @@ if __name__ == '__main__':
    for corpusName in corpusList:
       print("Processing " + corpusName)
       score = corpus.parse(corpusName)
+# Start writing features here ===================================================
       notes = score.flat.getElementsByClass(note.Note)
       print notes
       #notes = score.flat.notes
@@ -54,6 +56,7 @@ if __name__ == '__main__':
 
       #f.write(str(corpusName))
       #f.write(";")
+# print features here ===========================================================
       printDict(noteCount, attrSizes[0])
       f.write(",")
       printDict(noteCountFreq, attrSizes[1])
@@ -61,6 +64,8 @@ if __name__ == '__main__':
       printDict(octave, attrSizes[2])
       f.write(",")
       printDict(octaveFreq, attrSizes[3])
+      f.write(",")
+      f.write(corpusName.split('/')[0])
       f.write("\n")
       print("done." )
    f.close()
