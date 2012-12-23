@@ -6,13 +6,14 @@ def divideByTotal(inputDict, total):
    return {key:float(count)/total for key, count in inputDict.iteritems()}
 
 def printDict(dic,idxRange):
-   f.write("[")
+   #f.write("[")
    f.write(str(dic.get(0,0))) 
    for i in range(1,idxRange):
       f.write(",")
       f.write(str(dic.get(i,0)))
-   f.write("]")
-   f.write(";")
+   #f.write("]")
+   #f.write(";")
+   f.write(",")
 
 if __name__ == '__main__':
    print("Getting corpus list..." )
@@ -20,8 +21,17 @@ if __name__ == '__main__':
    print("done." )
 
    f = open('./feature01.txt', 'w')
-   line = ["scoreName", "noteCount", "noteCountFreq", "ocatev", "octaveFreq"]
-   f.write(",".join(line))
+   attrSizes = [1,12,12,8,8]
+   attrNames= ["scoreName", "noteCount", "noteCountFreq", "octave", "octaveFreq"]
+   fullAttrNames = []
+   for attrSize, attrName in zip(attrSizes, attrNames):
+      if attrSize > 1:
+         for i in range(0,attrSize):
+            fullAttrNames.append("{0}{1}".format(attrName,i))
+      else:
+         fullAttrNames.append("{0}".format(attrName))
+
+   f.write(",".join(fullAttrNames))
    f.write("\n")
 
    for corpusName in corpusList:
@@ -44,10 +54,10 @@ if __name__ == '__main__':
 
       f.write(str(corpusName))
       f.write(";")
-      printDict(noteCount, 12)
-      printDict(noteCountFreq, 12)
-      printDict(octave, 8)
-      printDict(octaveFreq, 8)
+      printDict(noteCount, attrSizes[1])
+      printDict(noteCountFreq, attrSizes[2])
+      printDict(octave, attrSizes[3])
+      printDict(octaveFreq, attrSizes[4])
       f.write("\n")
       print("done." )
    f.close()
