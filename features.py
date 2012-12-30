@@ -14,6 +14,38 @@ def printDict(dic,idxRange):
    #f.write("]")
    #f.write(";")
    #f.write(",")
+def getNotesOnly(score):
+   return score.flat.getElementsByClass(note.Note)
+
+
+def getNoteCount(score):
+#return dict, use print dict
+   notes = getNoteCount(score)
+   noteCount = defaultdict(int) 
+   for cNote in notes:
+      noteCount[cNote.pitch.pitchClass] += 1
+   return noteCount
+
+def getNoteCountFreq(score):
+   notes = getNoteCount(score)
+   noteCount = getNoteCount()
+   noteCountFreq = divideByTotal(noteCount, len(notes))
+   return noteCountFreq
+
+def getOctave(score):
+#return dict, use print dict
+   notes = getNoteCount(score)
+   octave= defaultdict(int) 
+   for cNote in notes:
+      octave[cNote.pitch.octave] += 1
+   return octave 
+
+def getOctaveFreq(score):
+   notes = getNoteCount(score)
+   octave = getOctave()
+   octaveFreq = divideByTotal(octave, len(notes))
+   return octaveFreq
+
 
 if __name__ == '__main__':
    print("Getting corpus list..." )
@@ -39,20 +71,24 @@ if __name__ == '__main__':
       print("Processing " + corpusName)
       score = corpus.parse(corpusName)
 # Start writing features here ===================================================
-      notes = score.flat.getElementsByClass(note.Note)
-      print notes
-      #notes = score.flat.notes
-      #notes = score.flat.getElementsByClass(note)
-      noteCount = defaultdict(int) 
-      octave= defaultdict(int) 
-      for cNote in notes:
-         noteCount[cNote.pitch.pitchClass] += 1
-         octave[cNote.pitch.octave] += 1
-         #print note.pitch
-
-
-      noteCountFreq = divideByTotal(noteCount, len(notes))
-      octaveFreq = divideByTotal(octave, len(notes))
+#      notes = score.flat.getElementsByClass(note.Note)
+#      print notes
+#      #notes = score.flat.notes
+#      #notes = score.flat.getElementsByClass(note)
+#      noteCount = defaultdict(int) 
+#      octave= defaultdict(int) 
+#      for cNote in notes:
+#         noteCount[cNote.pitch.pitchClass] += 1
+#         octave[cNote.pitch.octave] += 1
+#         #print note.pitch
+#
+#
+#      noteCountFreq = divideByTotal(noteCount, len(notes))
+#      octaveFreq = divideByTotal(octave, len(notes))
+      noteCount = getNoteCount() 
+      noteCountFreq = getNoteCountFreq() 
+      octave = getOctave() 
+      octaveFreq = getOctaveFreq() 
 
       #f.write(str(corpusName))
       #f.write(";")
