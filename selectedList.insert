@@ -1,5 +1,3 @@
-from music21 import *
-cList = [\
 "bach/artOfFugue_bwv1080/01.zip",\
 "bach/artOfFugue_bwv1080/02.zip",\
 "bach/artOfFugue_bwv1080/03.zip",\
@@ -83,19 +81,3 @@ cList = [\
 "schumann/opus41no1/movement3.mxl",\
 "schumann/opus41no1/movement4.xml",\
 "schumann/opus41no1/movement5.mxl",\
-        ]
-def getCorpusList():
-   #testCorpusList()
-   return cList
-
-def testCorpusList():
-   try:
-      for f in cList:
-         corpus.parse(f)
-
-   except:
-      raise #smoke test only
-#   except IOError:
-#      print "I/O error({0}): {1}".format(e.errno, e.strerror)
-#      raise
-

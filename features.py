@@ -20,32 +20,34 @@ def getNotesOnly(score):
 
 def getNoteCount(score):
 #return dict, use print dict
-   notes = getNoteCount(score)
+   notes = getNotesOnly(score)
    noteCount = defaultdict(int) 
    for cNote in notes:
       noteCount[cNote.pitch.pitchClass] += 1
    return noteCount
 
 def getNoteCountFreq(score):
-   notes = getNoteCount(score)
-   noteCount = getNoteCount()
+   notes = getNotesOnly(score)
+   noteCount = getNoteCount(score)
    noteCountFreq = divideByTotal(noteCount, len(notes))
    return noteCountFreq
 
 def getOctave(score):
 #return dict, use print dict
-   notes = getNoteCount(score)
+   notes = getNotesOnly(score)
    octave= defaultdict(int) 
    for cNote in notes:
       octave[cNote.pitch.octave] += 1
    return octave 
 
 def getOctaveFreq(score):
-   notes = getNoteCount(score)
-   octave = getOctave()
+   notes = getNotesOnly(score)
+   octave = getOctave(score)
    octaveFreq = divideByTotal(octave, len(notes))
    return octaveFreq
 
+#def getMelodicDirection(score):
+   #for part in score.parts
 
 if __name__ == '__main__':
    print("Getting corpus list..." )
@@ -85,10 +87,10 @@ if __name__ == '__main__':
 #
 #      noteCountFreq = divideByTotal(noteCount, len(notes))
 #      octaveFreq = divideByTotal(octave, len(notes))
-      noteCount = getNoteCount() 
-      noteCountFreq = getNoteCountFreq() 
-      octave = getOctave() 
-      octaveFreq = getOctaveFreq() 
+      noteCount = getNoteCount(score) 
+      noteCountFreq = getNoteCountFreq(score) 
+      octave = getOctave(score) 
+      octaveFreq = getOctaveFreq(score) 
 
       #f.write(str(corpusName))
       #f.write(";")
