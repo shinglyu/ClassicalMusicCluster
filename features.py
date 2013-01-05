@@ -28,13 +28,6 @@ def getNoteCount(score):
    return noteCount
 
 def getNoteCountFreq(score):
-   #notes = getNotesOnly(score)
-   notes = score.flat.getElementsByClass(note.Note)
-   octave= defaultdict(int) 
-   for cNote in notes:
-      octave[cNote.pitch.octave] += 1
-   return octave 
-
    noteCount = getNoteCount(score)
    noteCountFreq = divideByTotal(noteCount, len(notes))
    return noteCountFreq
