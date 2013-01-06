@@ -20,10 +20,11 @@ if __name__ == '__main__':
    corpusList = getCorpusList()
    print("done." )
 
-   f = open('./feature01.csv', 'w')
+   f = open('./feature03.csv', 'w')
    attrSizes = [12,12,8,8,1,1,1,1,1,1,1]
 # print the name of your features here ===========================================
-   attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq","PitchRange","999","444","222","777","000", "composer"]
+   #attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq","PitchRange","999","444","222","777","000", "composer"]
+   attrNames= ["PitchRange","999","444","222","777","000", "composer"]
    fullAttrNames = []
    for attrSize, attrName in zip(attrSizes, attrNames):
       if attrSize > 1:
@@ -76,14 +77,14 @@ if __name__ == '__main__':
       #f.write(str(corpusName))
       #f.write(";")
 # print features here ===========================================================
-      printDict(noteCount, attrSizes[0])
-      f.write(",")
-      printDict(noteCountFreq, attrSizes[1])
-      f.write(",")
-      printDict(octave, attrSizes[2])
-      f.write(",")
-      printDict(octaveFreq, attrSizes[3])
-      f.write(",")
+      #printDict(noteCount, attrSizes[0])
+      #f.write(",")
+      #printDict(noteCountFreq, attrSizes[1])
+      #f.write(",")
+      #printDict(octave, attrSizes[2])
+      #f.write(",")
+      #printDict(octaveFreq, attrSizes[3])
+      #f.write(",")
       f.write(str(difnote))
       f.write(",")
       f.write(str(float(corpusthreelist["9,9,9"])/float((len(notes)-2))))

@@ -61,14 +61,6 @@ def getTimeSignature(score):
    return ts.barDuration.quarterLength
 
 
-if __name__ == '__main__':
-   print("Getting corpus list..." )
-   corpusList = getCorpusList()
-   print("done." )
-
-   f = open('./feature01.csv', 'w')
-   attrSizes = [12,12,8,8,1,3]
-# print the name of your features here ===========================================
 
 if __name__ == '__main__':
    print("Getting corpus list..." )
@@ -79,7 +71,8 @@ if __name__ == '__main__':
    attrSizes = [1,1,1,1,1,1,1]
 # print the name of your features here ===========================================
    #attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq", "composer", "ts_numerator", "ts_denominator", "time_signature", "melDiffMean", "melDiffVar","noteMeasure","duMean","duVar"]
-   attrNames= ["composer", "time_signature", "melDiffMean", "melDiffVar","noteMeasure","duMean","duVar"]
+   #attrNames= ["composer", "time_signature", "melDiffMean", "melDiffVar","noteMeasure","duMean","duVar"]
+   attrNames= ["noteMeasure","duMean","duVar"]
    fullAttrNames = []
    for attrSize, attrName in zip(attrSizes, attrNames):
       if attrSize > 1:
@@ -122,14 +115,14 @@ if __name__ == '__main__':
 ##      f.write(",")
 ##      printDict(octaveFreq, attrSizes[3])
 ##      f.write(",")
-      f.write(corpusName.split('/')[0])
-      f.write(",")
-      f.write(str(timeSignature))
-      f.write(",")
-      f.write(str(melDiffMean))
-      f.write(",")
-      f.write(str(melDiffVar))
-      f.write(",")
+      #f.write(corpusName.split('/')[0])
+      #f.write(",")
+      #f.write(str(timeSignature))
+      #f.write(",")
+      #f.write(str(melDiffMean))
+      #f.write(",")
+      #f.write(str(melDiffVar))
+      #f.write(",")
       f.write(str(len(notes)*len(score.parts)/measureCount))
       f.write(",")
       f.write(str(durationMean))
