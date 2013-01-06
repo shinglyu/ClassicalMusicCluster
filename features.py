@@ -88,16 +88,6 @@ def getTimeSignature(score):
    return ts.barDuration.quarterLength
 
 
-if __name__ == '__main__':
-   print("Getting corpus list..." )
-   corpusList = getCorpusList()
-   print("done." )
-
-   f = open('./feature01.csv', 'w')
-   attrSizes = [12,12,8,8,1,3]
-# print the name of your features here ===========================================
-
-
 def getTimeSignature(score):
    ts = score.flat.getElementsByClass(meter.TimeSignature)[0]
    #return {'numerator' : ts.numerator, 'denominator' : ts.denominator, 'tsStr' : ts.ratioString}
