@@ -67,7 +67,7 @@ if __name__ == '__main__':
    corpusList = getCorpusList()
    print("done." )
 
-   f = open('./feature02.csv', 'w')
+   f = open('./features02.csv', 'w')
    attrSizes = [1,1,1,1,1,1,1]
 # print the name of your features here ===========================================
    #attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq", "composer", "ts_numerator", "ts_denominator", "time_signature", "melDiffMean", "melDiffVar","noteMeasure","duMean","duVar"]

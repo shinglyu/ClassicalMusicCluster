@@ -1,4 +1,4 @@
-filenames = ['feature01_three.csv', 'feature02.csv']
+filenames = ['features01.csv', 'features02.csv', 'features03.csv']
 
 files = map(open, filenames)
 outFile =  open('features_all.csv', 'w')

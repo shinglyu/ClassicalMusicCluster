@@ -28,6 +28,7 @@ def getNoteCount(score):
    return noteCount
 
 def getNoteCountFreq(score):
+   notes = score.flat.getElementsByClass(note.Note)
    noteCount = getNoteCount(score)
    noteCountFreq = divideByTotal(noteCount, len(notes))
    return noteCountFreq
@@ -100,7 +101,7 @@ if __name__ == '__main__':
    corpusList = getCorpusList()
    print("done." )
 
-   f = open('./feature01.csv', 'w')
+   f = open('./features01.csv', 'w')
    attrSizes = [12,12,8,8,1,3]
 # print the name of your features here ===========================================
    attrNames= ["noteCount", "noteCountFreq", "octave", "octaveFreq", "composer", "ts_numerator", "ts_denominator", "time_signature", "melDiffMean", "melDiffVar"]
