@@ -1,0 +1,144 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 500 -S 10
+Relation:     features_all_932
+Instances:    932
+Attributes:   53
+              noteCount0
+              noteCount1
+              noteCount2
+              noteCount3
+              noteCount4
+              noteCount5
+              noteCount6
+              noteCount7
+              noteCount8
+              noteCount9
+              noteCount10
+              noteCount11
+              noteCountFreq0
+              noteCountFreq1
+              noteCountFreq2
+              noteCountFreq3
+              noteCountFreq4
+              noteCountFreq5
+              noteCountFreq6
+              noteCountFreq7
+              noteCountFreq8
+              noteCountFreq9
+              noteCountFreq10
+              noteCountFreq11
+              octave0
+              octave1
+              octave2
+              octave3
+              octave4
+              octave5
+              octave6
+              octave7
+              octaveFreq0
+              octaveFreq1
+              octaveFreq2
+              octaveFreq3
+              octaveFreq4
+              octaveFreq5
+              octaveFreq6
+              octaveFreq7
+              composer
+              ts_numerator0
+              ts_numerator1
+              ts_numerator2
+              noteMeasure
+              duMean
+              duVar
+              PitchRange
+              999
+              444
+              222
+              777
+              000
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 16
+Within cluster sum of squared errors: 706.756246491374
+Missing values globally replaced with mean/mode
+
+Cluster centroids:
+                               Cluster#
+Attribute          Full Data          0          1          2
+                       (932)      (265)      (324)      (343)
+=============================================================
+noteCount0          114.6266     89.834    228.108     26.586
+noteCount1           57.2114    25.0189    98.6636    42.9271
+noteCount2          143.9689    84.3962   275.5432    65.7085
+noteCount3            62.088    54.1283   116.3395    16.9913
+noteCount4          109.2521    42.9208   196.5617    78.0262
+noteCount5          100.2071    97.5547   195.1204    12.6006
+noteCount6           70.2103    19.0491   122.8025    60.0583
+noteCount7          133.7082    88.7321   264.8735    44.5569
+noteCount8           51.8112    32.2302    92.0309    28.9475
+noteCount9          129.7403    67.6943   237.1728    76.1953
+noteCount10          83.4624    84.3849   160.0586    10.3965
+noteCount11          83.3187    19.6038   148.5123    70.9621
+noteCountFreq0        0.0953     0.1345      0.103     0.0576
+noteCountFreq1        0.0501     0.0275     0.0451     0.0724
+noteCountFreq2        0.1304     0.1299     0.1306     0.1307
+noteCountFreq3        0.0501     0.0709     0.0612     0.0235
+noteCountFreq4        0.1009     0.0571     0.0867     0.1483
+noteCountFreq5        0.0801     0.1377      0.093     0.0235
+noteCountFreq6        0.0667     0.0266     0.0569     0.1068
+noteCountFreq7        0.1149      0.134     0.1225      0.093
+noteCountFreq8        0.0419     0.0361     0.0422     0.0461
+noteCountFreq9        0.1199     0.1019     0.1082     0.1449
+noteCountFreq10       0.0686     0.1187     0.0842     0.0152
+noteCountFreq11        0.081     0.0252     0.0662      0.138
+octave0                    0          0          0          0
+octave1               0.0461     0.0038     0.0864     0.0408
+octave2               69.397    42.7245   130.1358    32.6297
+octave3             284.5805   210.3774   475.6235    161.449
+octave4             477.8208   309.4981   873.4228   234.1778
+octave5              275.882    137.117   574.5802   100.9388
+octave6              30.2264     3.1208    80.7068      3.484
+octave7               0.1888          0     0.5401     0.0029
+octaveFreq0                0          0          0          0
+octaveFreq1           0.0001          0     0.0002          0
+octaveFreq2            0.058     0.0613      0.056     0.0574
+octaveFreq3           0.2849     0.3122      0.218     0.3271
+octaveFreq4           0.4542     0.4683     0.4241     0.4719
+octaveFreq5           0.1889     0.1531       0.27     0.1399
+octaveFreq6           0.0125     0.0027     0.0311     0.0027
+octaveFreq7           0.0001          0     0.0003          0
+composer                bach       bach      haydn       bach
+ts_numerator0         3.5464      3.733     3.0278     3.8921
+ts_numerator1        -0.0314    -0.0393    -0.0205    -0.0357
+ts_numerator2        14.0719    12.3446    18.5212    11.2037
+noteMeasure          16.6717     17.683    14.7377    17.7172
+duMean                 0.774     0.7973     0.6827     0.8423
+duVar                 0.2633     0.2651     0.2656     0.2596
+PitchRange            9.8659     9.6453     9.9444     9.9621
+999                   0.0036     0.0008     0.0065      0.003
+444                   0.0022     0.0002      0.004     0.0021
+222                   0.0046     0.0015     0.0095     0.0024
+777                   0.0038     0.0018     0.0083     0.0011
+000                   0.0033     0.0024     0.0071     0.0004
+
+
+
+
+Time taken to build model (full training data) : 2.04 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      265 ( 28%)
+1      324 ( 35%)
+2      343 ( 37%)
+
